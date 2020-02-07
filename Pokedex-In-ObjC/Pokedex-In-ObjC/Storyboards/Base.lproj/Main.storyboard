@@ -7,21 +7,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pokemon Table View Controller-->
         <scene sceneID="tyu-dL-31i">
             <objects>
-                <tableViewController id="dO2-Q3-i9j" sceneMemberID="viewController">
+                <tableViewController id="dO2-Q3-i9j" customClass="BNBPokemonTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UY5-fv-hBZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokeCell" id="xDP-WN-kg0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokeCell" textLabel="vzG-jB-R5Q" style="IBUITableViewCellStyleDefault" id="xDP-WN-kg0">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xDP-WN-kg0" id="r4l-jm-Y5M">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vzG-jB-R5Q">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="SLd-dP-GAd" kind="show" identifier="ToPokeDetailSegue" id="WzY-uh-dbC"/>
@@ -39,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="914.49275362318849" y="121.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon Detail View Controller-->
         <scene sceneID="eFs-70-U1M">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="SLd-dP-GAd" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="SLd-dP-GAd" customClass="BNBPokemonDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dDo-KB-6U8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,10 +118,16 @@
                         <viewLayoutGuide key="safeArea" id="vf5-jC-X8d"/>
                     </view>
                     <navigationItem key="navigationItem" id="SCM-Qr-H3g"/>
+                    <connections>
+                        <outlet property="pokeAbilitiesLabel" destination="XAu-K2-q2D" id="McY-ul-sbW"/>
+                        <outlet property="pokeIDLabel" destination="vhR-6B-QVZ" id="SEm-1x-NW1"/>
+                        <outlet property="pokeNameLabel" destination="R0F-Nq-RWP" id="X1Z-ze-Ybl"/>
+                        <outlet property="spriteImage" destination="Xvy-Yf-Uxe" id="JEm-Ud-ffr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Di-H2-TZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1675.3623188405797" y="121.875"/>
+            <point key="canvasLocation" x="1806" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cQt-xW-b5g">
